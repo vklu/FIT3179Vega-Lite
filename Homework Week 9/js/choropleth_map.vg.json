@@ -11,7 +11,7 @@
     {
       "lookup": "properties.name",
       "from": {
-        "data": {update
+        "data": {
           "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/data/death-rates-from-air-pollution.csv"
         },
         "key": "Entity",
