@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Global Deaths from Air Pollution in 2017",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/js/world.geo.topojson",
+    "format": {"type": "topojson", "feature": "world.geo"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.iso_a3",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/data/death-rates-from-air-pollution.csv"
+        },
+        "key": "Code",
+        "fields": ["Air pollution (total) (deaths per 100,000)", "Year"]
+      }
+    }
+  ],
+  "projection": {"type": "equirectangular"},
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "Air pollution (total) (deaths per 100,000)",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "Country"},
+      {
+        "field": "Air pollution (total) (deaths per 100,000)",
+        "type": "quantitative"
+      }
+    ]
+  },
+  "config": {}
+}
