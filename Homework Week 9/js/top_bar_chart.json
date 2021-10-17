@@ -8,9 +8,7 @@
       "window": [{"op": "rank", "as": "rank"}],
       "sort": [{ "field": "Count", "order": "descending" }]
     },
-    {
-      "calculate": "datum.rank < 10 ? datum.Risk_Factor : 'All Others'", "as": "ranked_director"
-    }
+    {"filter": "datum.rank <= 20"}
   ],
   "encoding": {
     "x": {
@@ -18,9 +16,11 @@
       "type": "quantitative"
     },
     "y": {
-      "field": "ranked_director",
-      "type": "nomial",
+      "field": "RiskFactor",
+      "type": "nominal",
       "sort": {"field": "Count", "op": "average", "order":"descending"}
-    }
-  }
+    },
+    "color": {"value": "#FFA500"}
+    },
+    "config": {"background": "beige", "title": {"font": "roboto", "fontSize": 16, "fontWeight": "bold"}}
 }
