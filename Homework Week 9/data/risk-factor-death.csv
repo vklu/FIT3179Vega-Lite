@@ -1,0 +1,29 @@
+Entity,Code,Year,Risk Factor,Count
+World,OWID_WRL,2017,Unsafe water source,1232368.284
+World,OWID_WRL,2017,Unsafe sanitation,774240.9861
+World,OWID_WRL,2017,No access to handwashing facility,707247.7129
+World,OWID_WRL,2017,Household air pollution from solid fuels,1640599.784
+World,OWID_WRL,2017,Non-exclusive breastfeeding,160983.3744
+World,OWID_WRL,2017,Discontinued breastfeeding,10011.80923
+World,OWID_WRL,2017,Child wasting,1077101.961
+World,OWID_WRL,2017,Child stunting,220677.9805
+World,OWID_WRL,2017,Low birth weight for gestation,1096977.205
+World,OWID_WRL,2017,Secondhand smoke,1220044.162
+World,OWID_WRL,2017,Alcohol use,2842854.196
+World,OWID_WRL,2017,Drug use,585348.1802
+World,OWID_WRL,2017,Diet low in fruits,2423447.368
+World,OWID_WRL,2017,Diet low in vegetables,1462367.411
+World,OWID_WRL,2017,Unsafe sex,1028619.949
+World,OWID_WRL,2017,Low physical activity,1263051.288
+World,OWID_WRL,2017,High fasting plasma glucose,6526028.193
+World,OWID_WRL,2017,High body-mass index,4724346.293
+World,OWID_WRL,2017,High systolic blood pressure,10440818.48
+World,OWID_WRL,2017,Smoking,7099111.294
+World,OWID_WRL,2017,Iron deficiency,59881.94912
+World,OWID_WRL,2017,Vitamin A deficiency,232776.7354
+World,OWID_WRL,2017,Low bone mineral density,327314.2626
+World,OWID_WRL,2017,Air pollution,4895475.998
+World,OWID_WRL,2017,Outdoor air pollution,3408877.62
+World,OWID_WRL,2017,Diet high in sodium,3196514.265
+World,OWID_WRL,2017,Diet low in whole grains,3065588.513
+World,OWID_WRL,2017,Diet low in nuts and seeds,2062521.709
