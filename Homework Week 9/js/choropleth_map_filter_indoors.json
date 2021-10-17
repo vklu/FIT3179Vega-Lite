@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Indoor Air Pollution Deaths from Air Pollution",
+  "width": 800,
+  "height": 600,
+  "projection": {"type": "equirectangular"},
+  "params":[
+    {
+      "name": "Year_selection",
+      "value": 1990,
+      "bind": {
+        "input": "range",
+        "min": 1990,
+        "max": 2017,
+        "step": 1,
+        "name": "Year:  "
+      }
+    }
+    ],
+    "data": {
+  "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/data/death-rates-from-air-pollution.csv"
+},
+"transform": [
+  {
+    "lookup": "Code",
+    "from": {
+      "data": {
+        "url":  "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/js/world.geo.topojson",
+  "format": {"type": "topojson", "feature": "world.geo"}
+      },
+      "key": "properties.iso_a3"
+    },
+    "as": "geo"
+  },
+  {"filter": "datum.Year == Year_selection"}
+],
+"mark": {"type": "geoshape"},
+"encoding": {
+  "shape": {"field": "geo", "type": "geojson"},
+  "color": {
+    "field": "Indoor air pollution (deaths per 100,000)",
+    "type": "quantitative"
+  },
+  "tooltip": [
+    {"field": "Entity", "type": "nominal", "title": "Country"},
+    {
+      "field": "Indoor air pollution (deaths per 100,000)",
+      "type": "quantitative",
+      "format": ".2f"
+    },
+    {"field":"Year", "type":"quantitative"}
+  ]
+},
+  "config": {}
+}

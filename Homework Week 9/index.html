@@ -17,10 +17,20 @@
 
 <script type="text/javascript">
 
-  var spec2 = "js/choropleth_map.vg.json";
+  var spec2 = "js/choropleth_map_filter.json";
   vegaEmbed('#choropleth_map', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+</script>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<div id="choropleth_map_2"></div>
+<script type="text/javascript">
+  var spec3 = "js/choropleth_map_filter_indoors.json";
+vegaEmbed('#choropleth_map_2', spec3).then(function(result2) {
+  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
 </script>
 
 </body>
