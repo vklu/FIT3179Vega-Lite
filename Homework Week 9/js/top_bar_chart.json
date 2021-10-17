@@ -1,56 +1,26 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "params":[
-    {
-      "name": "Year_selection",
-      "value": 1990,
-      "bind": {
-        "input": "range",
-        "min": 1990,
-        "max": 2017,
-        "step": 1,
-        "name": "Year:  "
-      }
-    }],
-  "data": {
-    "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/data/death-rates-from-air-pollution-10-countries.csv"
-  },
+  "title": "Top Risk Factors for Death",
+  "data": {"url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/data/risk-factor-death.csv"},
+  "mark": "bar",
   "transform": [
-    {"filter": "datum.Year == Year_selection"}
-  ],
-  "columns": 2,
-  "concat": [{
-      "title": "Total Air Pollution Deaths",
-      "mark": "arc",
-      "encoding": {
-        "theta": {"field": "Air pollution (total) (deaths per 100,000)", "type": "quantitative"},
-        "color": {"field": "Entity", "type": "nominal", "legend": {"title": "Country"}},
-        "tooltip": [{"field": "Entity", "title": "Country"}, {"field": "Air pollution (total) (deaths per 100,000)", "title": "Deaths per 100,000"}]
-      }
-    }, {
-      "title": "Indoor Air Pollution Deaths",
-      "mark":"arc",
-      "encoding": {
-        "theta": {"field": "Indoor air pollution (deaths per 100,000)", "type": "quantitative"},
-        "color": {"field": "Entity", "type": "nominal"},
-        "tooltip": [{"field": "Entity", "title": "Country"}, {"field": "Indoor air pollution (deaths per 100,000)", "title": "Deaths per 100,000"}]
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{ "field": "Count", "order": "descending" }]
+    },
+    {
+      "calculate": "datum.rank < 10 ? datum.Risk_Factor : 'All Others'", "as": "ranked_director"
     }
-  }, {
-      "title": "Outdoor Particle Air Pollution Deaths",
-      "mark":"arc",
-      "encoding": {
-        "theta": {"field": "Outdoor particulate matter (deaths per 100,000)", "type": "quantitative"},
-        "color": {"field": "Entity", "type": "nominal"},
-        "tooltip": [{"field": "Entity", "title": "Country"}, {"field": "Outdoor particulate matter (deaths per 100,000)", "title": "Deaths per 100,000"}] 
-      }
-    }, {
-      "title": "Outdoor Ozone Air Pollution Deaths",
-      "mark":"arc",
-      "encoding": {
-        "theta": {"field": "Outdoor ozone pollution (deaths per 100,000)", "type": "quantitative"},
-        "color": {"field": "Entity", "type": "nominal"},
-        "tooltip": [{"field": "Entity", "title": "Country"}, {"field": "Outdoor ozone pollution (deaths per 100,000)", "title": "Deaths per 100,000"}]
-      }
-    }],
-    "config": {"background": "beige", "title": {"font": "roboto", "fontSize": 16, "fontWeight": "bold"}}
+  ],
+  "encoding": {
+    "x": {
+      "field": "Count",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "ranked_director",
+      "type": "nomial",
+      "sort": {"field": "Count", "op": "average", "order":"descending"}
+    }
+  }
 }

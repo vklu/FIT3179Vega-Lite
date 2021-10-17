@@ -1,4 +1,4 @@
-Entity,Code,Year,Risk Factor,Count
+Entity,Code,Year,RiskFactor,Count
 World,OWID_WRL,2017,Unsafe water source,1232368.284
 World,OWID_WRL,2017,Unsafe sanitation,774240.9861
 World,OWID_WRL,2017,No access to handwashing facility,707247.7129
