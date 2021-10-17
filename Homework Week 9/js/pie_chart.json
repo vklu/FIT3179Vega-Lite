@@ -32,7 +32,7 @@
       "mark":"arc",
       "encoding": {
         "theta": {"field": "Indoor air pollution (deaths per 100,000)", "type": "quantitative"},
-        "color": {"field": "Entity", "type": "nominal"},
+        "color": {"field": "Entity", "type": "nominal", "legend": {"title": "Country"}},
         "tooltip": [{"field": "Entity", "title": "Country"}, {"field": "Indoor air pollution (deaths per 100,000)", "title": "Deaths per 100,000", "format": ".2f"}]
     }
   }, {
@@ -40,7 +40,7 @@
       "mark":"arc",
       "encoding": {
         "theta": {"field": "Outdoor particulate matter (deaths per 100,000)", "type": "quantitative"},
-        "color": {"field": "Entity", "type": "nominal"},
+        "color": {"field": "Entity", "type": "nominal", "legend": {"title": "Country"}},
         "tooltip": [{"field": "Entity", "title": "Country"}, {"field": "Outdoor particulate matter (deaths per 100,000)", "title": "Deaths per 100,000", "format": ".2f"}] 
       }
     }, {
@@ -48,7 +48,7 @@
       "mark":"arc",
       "encoding": {
         "theta": {"field": "Outdoor ozone pollution (deaths per 100,000)", "type": "quantitative"},
-        "color": {"field": "Entity", "type": "nominal"},
+        "color": {"field": "Entity", "type": "nominal", "legend": {"title": "Country"}},
         "tooltip": [{"field": "Entity", "title": "Country"}, {"field": "Outdoor ozone pollution (deaths per 100,000)", "title": "Deaths per 100,000", "format": ".2f"}]
       }
     }],

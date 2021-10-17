@@ -12,26 +12,57 @@
 
 </head>
 <body>
-  
+<h1>The Effects of Air Pollution</h1>
+<h4>by Vincent Lu</h4>
+<h2>Introduction to Air Pollution</h2>
+
 <div id="choropleth_map"></div>
 
 <script type="text/javascript">
 
-  var spec2 = "js/choropleth_map_filter.json";
-  vegaEmbed('#choropleth_map', spec2).then(function(result) {
+  var spec = "js/choropleth_map_filter.json";
+  vegaEmbed('#choropleth_map', spec).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
-<p>&nbsp</p>
-<p>&nbsp</p>
-<p>&nbsp</p>
-<div id="choropleth_map_2"></div>
+
+<h2>Risk Factor Rankings</h2>
+
+<div id="top_bar_chart"></div>
+
 <script type="text/javascript">
-  var spec3 = "js/choropleth_map_filter_indoors.json";
-vegaEmbed('#choropleth_map_2', spec3).then(function(result2) {
-  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-}).catch(console.error);
+
+  var spec2 = "js/top_bar_chart.json";
+  vegaEmbed('#top_bar_chart', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
 </script>
+
+<h2>Types of Air Pollution</h2>
+
+<div id="pie_chart"></div>
+
+<script type="text/javascript">
+
+  var spec3 = "js/pie_chart.json";
+  vegaEmbed('#pie_chart', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+<h2>Air Pollution Trends</h2>
+
+<div id="line_chart"></div>
+
+<script type="text/javascript">
+
+  var spec4 = "js/line_chart.json";
+  vegaEmbed('#line_chart', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+<p>&nbsp;</p>
 
 </body>
 </html>

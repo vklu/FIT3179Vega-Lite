@@ -6,12 +6,12 @@
   "data": {
     "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/data/PM2.5%20Global%20Air%20Pollution%202010-2017-10-countries_table_change.csv"
   },
-  "transform": [{"filter": "datum.CountryName!=='New Zealand'"}],
+  "transform": [{"filter": "datum.Country!=='New Zealand'"}],
   "encoding": {
     "x": {"field": "Year", "type": "ordinal", "title": "Year" },
     "y": {"field": "PM25", "type": "quantitative", "title": "PM 2.5 Air Pollution"},
     "tooltip": [
-      {"field": "CountryName", "type": "nominal", "title": "Country"},
+      {"field": "Country", "type": "nominal", "title": "Country"},
       {
         "field": "PM25",
         "type": "quantitative",
@@ -23,7 +23,7 @@
     "color": {
       "condition": {
         "param": "hover",
-        "field": "CountryName",
+        "field": "Country",
         "type": "nominal"
       },
       "value": "grey"
@@ -39,10 +39,10 @@
     "layer": [{
       "params": [{
         "name": "hover",
-        "value": [{"CountryName": "Australia"}],
+        "value": [{"Country": "Australia"}],
         "select": {
           "type": "point",
-          "fields": ["CountryName"],
+          "fields": ["Country"],
           "on": "mouseover"
         }
       }],
