@@ -7,8 +7,8 @@
     "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/data/PM2.5%20Global%20Air%20Pollution%202010-2017-10-countries_table_change.csv"
   },
   "encoding": {
-    "x": {"field": "Year", "type": "temporal", "title": "Year" },
-    "y": {"field": "PM2.5", "type": "quantitative", "title": "PM 2.5 Air Pollution"},
+    "x": {"field": "Year", "type": "ordinal", "title": "Year" },
+    "y": {"field": "PM25", "type": "quantitative", "title": "PM 2.5 Air Pollution"},
     "color": {
       "condition": {
         "param": "hover",
@@ -42,7 +42,7 @@
     }, {
       "encoding": {
         "x": {"aggregate": "max", "field": "Year"},
-        "y": {"aggregate": {"argmax": "Year"}, "field": "PM2.5"}
+        "y": {"aggregate": {"argmax": "Year"}, "field": "PM25"}
       },
       "layer": [{
         "mark": {"type": "circle"}
