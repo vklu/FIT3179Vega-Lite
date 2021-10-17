@@ -1,20 +1,30 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Air Pollution from 2010 to 2017",
-  "width": 800,
-  "height": 600,
+  "width": 400,
+  "height": 1000,
   "data": {
     "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/data/PM2.5%20Global%20Air%20Pollution%202010-2017-10-countries_table_change.csv"
   },
+  "transform": [{"filter": "datum.CountryName!=='New Zealand'"}],
   "encoding": {
     "x": {"field": "Year", "type": "ordinal", "title": "Year" },
     "y": {"field": "PM25", "type": "quantitative", "title": "PM 2.5 Air Pollution"},
+    "tooltip": [
+      {"field": "CountryName", "type": "nominal", "title": "Country"},
+      {
+        "field": "PM25",
+        "type": "quantitative",
+        "title": "PM 2.5 Level",
+        "format": ".2f"
+      },
+      {"field":"Year", "type":"quantitative"}
+    ],
     "color": {
       "condition": {
         "param": "hover",
-        "field": "symbol",
-        "type": "nominal",
-        "legend": null
+        "field": "CountryName",
+        "type": "nominal"
       },
       "value": "grey"
     },
@@ -29,27 +39,16 @@
     "layer": [{
       "params": [{
         "name": "hover",
-        "value": [{"Country Name": "Australia"}],
+        "value": [{"CountryName": "Australia"}],
         "select": {
           "type": "point",
-          "fields": ["Country Name"],
+          "fields": ["CountryName"],
           "on": "mouseover"
         }
       }],
-      "mark": {"type":"line", "strokeWidth": 8, "stroke": "transparent"}
+      "mark": {"type":"line", "point": true, "strokeWidth": 8, "stroke": "transparent"}
     }, {
       "mark": "line"
-    }, {
-      "encoding": {
-        "x": {"aggregate": "max", "field": "Year"},
-        "y": {"aggregate": {"argmax": "Year"}, "field": "PM25"}
-      },
-      "layer": [{
-        "mark": {"type": "circle"}
-      }, {
-        "mark": {"type": "text", "align": "left", "dx": 4},
-        "encoding": {"text": {"field":"Country Name", "type": "nominal"}}
-      }]
     }],
-    "config": {"view": {"stroke": null}}
+    "config": {"view": {"stroke": null}, "background": "beige", "title": {"font": "roboto", "fontSize": 16, "fontWeight": "bold"}}
 }

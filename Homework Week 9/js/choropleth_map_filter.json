@@ -34,12 +34,17 @@
   },
   {"filter": "datum.Year == Year_selection"}
 ],
-"mark": {"type": "geoshape"},
+"mark": {"type": "geoshape", "stroke": "white"},
 "encoding": {
   "shape": {"field": "geo", "type": "geojson"},
   "color": {
     "field": "Air pollution (total) (deaths per 100,000)",
-    "type": "quantitative"
+    "type": "quantitative",
+    "scale": {
+      "type": "linear",
+      "range": ["#ffa230","#dd2109","#dd6342"]
+    },
+    "legend": {"title": "Deaths per 100k"}
   },
   "tooltip": [
     {"field": "Entity", "type": "nominal", "title": "Country"},
@@ -51,5 +56,5 @@
     {"field":"Year", "type":"quantitative"}
   ]
 },
-  "config": {}
+"config": {"background": "beige", "title": {"font": "roboto", "fontSize": 16, "fontWeight": "bold"}}
 }
