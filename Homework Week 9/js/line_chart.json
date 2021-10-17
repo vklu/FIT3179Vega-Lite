@@ -1,38 +1,55 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Global Deaths from Air Pollution in 2017",
+  "title": "Air Pollution from 2010 to 2017",
   "width": 800,
   "height": 600,
   "data": {
-    "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/js/world.geo.topojson",
-    "format": {"type": "topojson", "feature": "world.geo"}
+    "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/data/PM2.5%20Global%20Air%20Pollution%202010-2017-10-countries_table_change.csv"
   },
-  "transform": [
-    {
-      "lookup": "properties.iso_a3",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/data/death-rates-from-air-pollution.csv"
-        },
-        "key": "Code",
-        "fields": ["Air pollution (total) (deaths per 100,000)", "Year"]
-      }
-    }
-  ],
-  "projection": {"type": "equirectangular"},
-  "mark": {"type": "geoshape"},
   "encoding": {
+    "x": {"field": "Year", "type": "temporal", "title": "Year" },
+    "y": {"field": "PM2.5", "type": "quantitative", "title": "PM 2.5 Air Pollution"},
     "color": {
-      "field": "Air pollution (total) (deaths per 100,000)",
-      "type": "quantitative"
+      "condition": {
+        "param": "hover",
+        "field": "symbol",
+        "type": "nominal",
+        "legend": null
+      },
+      "value": "grey"
     },
-    "tooltip": [
-      {"field": "properties.name", "type": "nominal", "title": "Country"},
-      {
-        "field": "Air pollution (total) (deaths per 100,000)",
-        "type": "quantitative"
-      }
-    ]
-  },
-  "config": {}
+    "opacity": {
+      "condition": {
+        "param": "hover",
+        "value": 1
+      },
+      "value": 0.2
+    }
+    },
+    "layer": [{
+      "params": [{
+        "name": "hover",
+        "value": [{"Country Name": "Australia"}],
+        "select": {
+          "type": "point",
+          "fields": ["Country Name"],
+          "on": "mouseover"
+        }
+      }],
+      "mark": {"type":"line", "strokeWidth": 8, "stroke": "transparent"}
+    }, {
+      "mark": "line"
+    }, {
+      "encoding": {
+        "x": {"aggregate": "max", "field": "Year"},
+        "y": {"aggregate": {"argmax": "Year"}, "field": "PM2.5"}
+      },
+      "layer": [{
+        "mark": {"type": "circle"}
+      }, {
+        "mark": {"type": "text", "align": "left", "dx": 4},
+        "encoding": {"text": {"field":"Country Name", "type": "nominal"}}
+      }]
+    }],
+    "config": {"view": {"stroke": null}}
 }
