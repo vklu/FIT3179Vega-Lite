@@ -5,7 +5,12 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
@@ -14,9 +19,27 @@
 <body>
 <h1>The Effects of Air Pollution</h1>
 <h4>by Vincent Lu</h4>
-<h2>Introduction to Air Pollution</h2>
 
-<div id="choropleth_map"></div>
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h2>Introduction to Air Pollution</h2>
+  </div>
+</div>
+
+
+<div class="pure-g">
+  <div class="pure-u-1-2">
+    <div id="choropleth_map"></div>
+  </div>
+  <div class="pure-u-1-8"></div>
+  <div class="pure-u-1-4">
+    <p><span style="color: red;">Air pollution</span> are substances in the air that are harmful to human health. <span style="color: red;">Air pollution</span> can come from indoor and outdoor environments and affects the entire world. This visualisation has been made to highlight the effects of <span style="color: red;">air pollution</span> on the globe.</p>
+    <p><span style="color: red;">Air pollution</span> can be anthropogenic (human-made) and therefore should be monitored and controlled to reduce damage from human sources.</p>
+    <p><strong>Motor vehicles</strong>, <strong>industrial facilities</strong> and <strong> commercial and domestic activities</strong> are common sources of <span style="color: red;">air pollution</span>.</p>
+    <p>The map on the left shows the global deaths from <span style="color: red;">air pollution</span>.</p>
+    <p>Note the high amount of deaths in Africa and Asia.</p>
+  </div>
+</div>
 
 <script type="text/javascript">
 
@@ -26,9 +49,23 @@
   }).catch(console.error);
 </script>
 
-<h2>Risk Factor Rankings</h2>
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h2>Risk Factor Rankings</h2>
+  </div>
+</div>
 
-<div id="top_bar_chart"></div>
+<div class="pure-g">
+  <div class="pure-u-1-2">
+    <div id="top_bar_chart"></div>
+  </div>
+  <div class="pure-u-1-8"></div>
+  <div class="pure-u-1-4">
+    <p>The effects of <span style="color: red;">air pollution</span> are clear in the risk factor visualisation on the left. <span style="color: red;">Air pollution</span> is <strong>ranked 3rd</strong> amongst death factors in the World in 2017 with outdoor <span style="color: red;">air pollution</span> <strong>ranking at number 5</strong>.</p>
+    <p>In addition, note that the highest ranking risk factor is smoking which contributes to <span style="color: red;">air pollution</span> as well.</p>
+    <p>In 2017, almost <strong>5 million deaths</strong> were from <span style="color: red;">Air pollution</span>.</p>
+  </div>
+</div>
 
 <script type="text/javascript">
 
@@ -38,9 +75,25 @@
   }).catch(console.error);
 </script>
 
-<h2>Types of Air Pollution</h2>
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h2>Types of Air Pollution</h2>
+  </div>
+</div>
 
-<div id="pie_chart"></div>
+<div class="pure-g">
+  <div class="pure-u-1-2">
+    <div id="pie_chart"></div>
+  </div>
+  <div class="pure-u-1-8"></div>
+  <div class="pure-u-1-4">
+    <p>Taking a closer look at the individual types of <span style="color: red;">air pollution</span> and comparing between countries, indoor pollution is by far the greatest cause of death. Indoor <span style="color: red;">air pollution</span> refers to pollution around buildings and in the home. Common sources are <strong>tobacco smoke</strong>, <strong>mold</strong>, <strong>pollen</strong>, <strong>household products</strong> and <strong>certain building materials such as asbestos</strong>.</p>
+    <p>Outdoor Particle Pollution refers to extremely small particles and liquid droplets in the air. Common sources are <strong>motor vehicles</strong>,<strong> wood burning heaters </strong>and <strong>industrial facilities</strong>.</p>
+    <p>Outdoor Ozone Pollution comes from sunlight interacting with the emissions particles in the air and therefore has the same sources as mentioned above in outdoor particle pollution.</p>
+    <p>The visualisations on the left highlight the impact of the major countries responsible for the highest levels of <span style="color: red;">air pollution</span>.</p>
+    <p>Note the visualisation may not appear correctly on the web page, please open the visualisation in the vega editor for the full chart.</p>
+  </div>
+</div>
 
 <script type="text/javascript">
 
@@ -50,9 +103,26 @@
   }).catch(console.error);
 </script>
 
-<h2>Air Pollution Trends</h2>
 
-<div id="line_chart"></div>
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h2>Air Pollution Trends</h2>
+  </div>
+</div>
+
+<div class="pure-g">
+  <div class="pure-u-1-2">
+    <div id="line_chart"></div>
+  </div>
+  <div class="pure-u-1-8"></div>
+  <div class="pure-u-1-4">
+    <p>Since 2010, efforts have been made to reduce <span style="color: red;">air pollution</span> through <strong>long-term policies</strong> and <strong>other recent attempts</strong>. Despite this, continued efforts should be made to continue this trend.</p>
+    <p>There are still large numbers of people that are exposed to harmful levels of <span style="color: red;">air pollution</span>.</p>
+    <p>The visualisation on the left shows the decreasing trend in <span style="color: red;">air pollution</span> levels over the period of 2010 to 2017 in various countries.</p>
+  </div>
+</div>
+
+
 
 <script type="text/javascript">
 
@@ -61,6 +131,19 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
+
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h2>Conclusion</h2>
+  </div>
+</div>
+
+<div class="pure-g">
+  <div class="pure-u-1-3"></div>
+  <div class="pure-u-1-3">
+    <p>This visualisation highlights the effects of <span style="color: red;">air pollution</span> and the <strong>importance of monitoring</strong> these levels as large amounts of people are exposed to and die to <span style="color: red;">air pollution</span> each year. The visualisation also highlights the enormous impact countries in Africa and Asia have on global <span style="color: red;">air pollution</span> effects and shows that while <span style="color: red;">air pollution</span> has been decreasing over the more recents years, <strong>further efforts should continue to be made to alleviate the problems of <span style="color: red;">air pollution</span></strong>.</p>
+  </div>
+</div>
 
 <p>&nbsp;</p>
 

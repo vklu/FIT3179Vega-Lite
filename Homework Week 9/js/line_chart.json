@@ -1,17 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Air Pollution from 2010 to 2017",
-  "width": 400,
-  "height": 1000,
+  "width": 800,
+  "height": 600,
+  "layer": [{
   "data": {
     "url": "https://raw.githubusercontent.com/vklu/FIT3179Vega-Lite/main/Homework%20Week%209/data/PM2.5%20Global%20Air%20Pollution%202010-2017-10-countries_table_change.csv"
   },
-  "transform": [{"filter": "datum.Country!=='New Zealand'"}],
   "encoding": {
     "x": {"field": "Year", "type": "ordinal", "title": "Year" },
     "y": {"field": "PM25", "type": "quantitative", "title": "PM 2.5 Air Pollution"},
     "tooltip": [
-      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "Country", "type": "nominal"},
       {
         "field": "PM25",
         "type": "quantitative",
@@ -37,6 +37,7 @@
     }
     },
     "layer": [{
+      "mark": {"type":"line", "point": true, "strokeWidth": 2},
       "params": [{
         "name": "hover",
         "value": [{"Country": "Australia"}],
@@ -45,10 +46,38 @@
           "fields": ["Country"],
           "on": "mouseover"
         }
-      }],
-      "mark": {"type":"line", "point": true, "strokeWidth": 8, "stroke": "transparent"}
-    }, {
-      "mark": "line"
-    }],
+      }]
+    }
+    ]}, {
+      "data": {
+        "values": [{}]
+      },
+      "encoding": {
+        "x": {"datum": "2011"}
+      },
+      "layer": [{
+        "mark": "rule"
+      }, {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "bottom",
+          "dx": 2,
+          "dy": 2,
+          "x": "width",
+          "text": "Year of 2011"
+        }
+      }, {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "bottom",
+          "dx": 2,
+          "dy": 15,
+          "x": "width",
+          "text": "Global Peak Air Pollution"
+        }
+      }]
+  }],
     "config": {"view": {"stroke": null}, "background": "beige", "title": {"font": "roboto", "fontSize": 16, "fontWeight": "bold"}}
 }

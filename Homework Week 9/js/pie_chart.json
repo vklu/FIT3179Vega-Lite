@@ -21,6 +21,8 @@
   "columns": 2,
   "concat": [{
       "title": "Total Air Pollution Deaths",
+      "width": 400,
+      "height": 400,
       "mark": "arc",
       "encoding": {
         "theta": {"field": "Air pollution (total) (deaths per 100,000)", "type": "quantitative"},
@@ -29,6 +31,8 @@
       }
     }, {
       "title": "Indoor Air Pollution Deaths",
+      "width": 400,
+      "height": 400,
       "mark":"arc",
       "encoding": {
         "theta": {"field": "Indoor air pollution (deaths per 100,000)", "type": "quantitative"},
@@ -37,6 +41,8 @@
     }
   }, {
       "title": "Outdoor Particle Air Pollution Deaths",
+      "width": 400,
+      "height": 400,
       "mark":"arc",
       "encoding": {
         "theta": {"field": "Outdoor particulate matter (deaths per 100,000)", "type": "quantitative"},
@@ -45,6 +51,8 @@
       }
     }, {
       "title": "Outdoor Ozone Air Pollution Deaths",
+      "width": 400,
+      "height": 400,
       "mark":"arc",
       "encoding": {
         "theta": {"field": "Outdoor ozone pollution (deaths per 100,000)", "type": "quantitative"},
